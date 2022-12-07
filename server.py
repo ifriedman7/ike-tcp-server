@@ -12,7 +12,7 @@ serversocket.bind((host, port))
 serversocket.listen(3)
 while True:
     clientsocket, address = serversocket.accept()
-    print("received connection from " % str(address))
+    print("received connection from %s" % str(address))
     message = "Thank you for connecting.\r\n"
     clientsocket.send(message.encode('ascii'))
     clientsocket.close()
