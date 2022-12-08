@@ -8,7 +8,9 @@ print("Welcome. This is nmap automation tool.")
 
 ip_addr = input("Enter IP address to scan (default localhost): ")
 if ip_addr == '':
-    ip_addr = socket.gethostname()
+    hostname = socket.gethostname()
+    ip_addr = socket.gethostbyname(hostname)
+
 print("IP entered: ", ip_addr)
 type(ip_addr)
 
