@@ -5,8 +5,7 @@
 import socket
 
 def main():
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
+    
     hostname = input("Enter host name to scan (default localhost): ")
     if hostname == '':
         hostname = socket.gethostname()
@@ -19,6 +18,7 @@ def main():
     portScan(ip_addr, int(port))
 
 def portScan(host, port):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     if s.connect_ex((host,port)):
         print("The port ", str(port), "is closed.")
     else:
