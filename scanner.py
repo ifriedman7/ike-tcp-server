@@ -40,4 +40,4 @@ elif resp == '3':
     print("scaninfo: \n", scanner.scaninfo())
     print("IP state: ", scanner[ip_addr].state)
     print("All protocols: ", scanner[ip_addr].all_protocols())
-    print("Open ports: ", scanner[ip_addr]['udp'].keys()) 
+    print("Open ports: ", scanner[ip_addr]['tcp'].keys()) 
