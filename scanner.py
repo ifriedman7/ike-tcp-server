@@ -41,3 +41,5 @@ elif resp == '3':
     print("IP state: ", scanner[ip_addr].state)
     print("All protocols: ", scanner[ip_addr].all_protocols())
     print("Open ports: ", scanner[ip_addr]['tcp'].keys()) 
+else:
+    print("Enter a valid option.")
