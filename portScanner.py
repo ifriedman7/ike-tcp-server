@@ -19,6 +19,7 @@ def main():
 
 def portScan(host, port):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.settimeout(5)
     if s.connect_ex((host,port)):
         print("The port ", str(port), "is closed.")
     else:
