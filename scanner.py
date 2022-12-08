@@ -34,3 +34,10 @@ elif resp == '2':
     print("IP state: ", scanner[ip_addr].state)
     print("All protocols: ", scanner[ip_addr].all_protocols())
     print("Open ports: ", scanner[ip_addr]['udp'].keys()) 
+elif resp == '3':    
+    print("Nmap version: ", scanner.nmap_version())
+    scanner.scan(ip_addr, '1-3000', '--privileged -v -sS -sV -sC -A -O')
+    print("scaninfo: \n", scanner.scaninfo())
+    print("IP state: ", scanner[ip_addr].state)
+    print("All protocols: ", scanner[ip_addr].all_protocols())
+    print("Open ports: ", scanner[ip_addr]['udp'].keys()) 
