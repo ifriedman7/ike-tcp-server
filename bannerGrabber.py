@@ -2,16 +2,27 @@
 
 import socket
 
-s= socket.socket()
+def banner(ip_addr, port):
+    s= socket.socket()
 
-ip_addr = input("Enter IP address to grab (default localhost): ")
-if ip_addr == '':
-    hostname = socket.gethostname()
-    ip_addr = socket.gethostbyname(hostname)
-port = input("Enter port to grab (default ??): ")
 
-print("IP entered: ", ip_addr)
 
-s.connect((ip_addr, int(port)))
+    s.connect((ip_addr, int(port)))
 
-print(s.recv(1024))
+    print(s.recv(1024))
+
+def main():
+    ip_addr = input("Enter IP address to grab (default localhost): ")
+    if ip_addr == '':
+        hostname = socket.gethostname()
+        ip_addr = socket.gethostbyname(hostname)
+    port = input("Enter port to grab (default ??): ")
+
+    print("IP entered: ", ip_addr)
+
+    banner(ip_addr, port)
+
+main()
+
+
+
