@@ -20,7 +20,7 @@ print("Option selected: ", resp)
 
 if resp == '1':
     print("Nmap version: ", scanner.nmap_version())
-    scanner.scan(ip_addr, '1-3000', '-v -sS')
+    scanner.scan(ip_addr, '1-3000', '--privileged -v -sS')
     print(scanner.scaninfo())
     print("IP state: ", scanner[ip_addr].state)
     print(scanner[ip_addr].all_protocols())
