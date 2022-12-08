@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+#Can use hackthissite.org for testing
+
 import socket
 
 def main():
